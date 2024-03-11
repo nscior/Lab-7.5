@@ -10,11 +10,15 @@
 </head>
 <body>
     <h1 class="text-3xl font-bold underline">
-        Hello world!
+        Endpoint Test
     </h1>
-
+    <!-- endpoint 1 -->
     <div x-data="{hello_world: $fetchjson('https://dummyjson.com/products/1', jsonItem='thumbnail')}">
-        <img alt="thumbnail" x-bind:src="hello_world"/>
+        <img class="sm:text-start" alt="thumbnail" x-bind:src="hello_world"/>
+    </div>
+    <!-- endpoint 2 -->
+    <div x-data="{images: $fetchjson('https://dummyjson.com/products/2', jsonItem='thumbnail')}">
+        <img class="sm:text-end" alt="thumbnail" x-bind:src="images">
     </div>
 </body>
 </html>
