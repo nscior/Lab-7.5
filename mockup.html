@@ -9,16 +9,21 @@
     <link rel="stylesheet" href="styles/output.css">
 </head>
 <body>
-    <h1 class="text-3xl font-bold underline">
+    <h1 class="text-3xl font-bold underline py-10">
         Endpoint Test
     </h1>
     <!-- endpoint 1 -->
-    <div x-data="{hello_world: $fetchjson('https://dummyjson.com/products/1', jsonItem='thumbnail')}">
-        <img class="sm:text-start" alt="thumbnail" x-bind:src="hello_world"/>
+    <div class="flex justify-center">
+        <div class="sm p-5" x-data="{hello_world: $fetchjson('https://dummyjson.com/products/1', jsonItem='thumbnail')}">
+            <img class="sm:text-start" alt="thumbnail" x-bind:src="hello_world"/>
+            <p>Endpoint 1</p>
+        </div>
+        <!-- endpoint 2 -->
+        <div class="sm p-5" x-data="{images: $fetchjson('https://dummyjson.com/products/2', jsonItem='thumbnail')}">
+            <img class="md " alt="thumbnail" x-bind:src="images">
+            <p>Endpoint 2</p>
+        </div>
     </div>
-    <!-- endpoint 2 -->
-    <div x-data="{images: $fetchjson('https://dummyjson.com/products/2', jsonItem='thumbnail')}">
-        <img class="sm:text-end" alt="thumbnail" x-bind:src="images">
-    </div>
+    
 </body>
 </html>

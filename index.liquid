@@ -3,5 +3,32 @@ layout: layout.liquid
 title: 11ty Boilerplate
 ---
 
-<h1>Yet Another 11ty <strong>Boilerplate</strong></h1>
-<img alt="pine" src="/images/pine.png" width="50" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 7.5</title>
+    <script defer src="https://cdn.jsdelivr.net/gh/hankhank10/alpine-fetch@main/alpine-fetch.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="/styles/output.css">
+</head>
+<body>
+    <h1 class="text-3xl font-bold underline py-10">
+        Endpoint Test
+    </h1>
+    <!-- endpoint 1 -->
+    <div class="flex justify-center">
+        <div class="sm p-5" x-data="{hello_world: $fetchjson('https://dummyjson.com/products/1', jsonItem='thumbnail')}">
+            <img class="sm:text-start" alt="thumbnail" x-bind:src="hello_world"/>
+            <p>Endpoint 1</p>
+        </div>
+        <!-- endpoint 2 -->
+        <div class="sm p-5" x-data="{images: $fetchjson('https://dummyjson.com/products/2', jsonItem='thumbnail')}">
+            <img class="md " alt="thumbnail" x-bind:src="images">
+            <p>Endpoint 2</p>
+        </div>
+    </div>
+    
+</body>
+</html>
